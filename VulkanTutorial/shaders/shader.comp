@@ -1,0 +1,26 @@
+#version 450
+
+struct Particle {
+    vec2 position;
+    vec2 velocity;
+    vec4 color;
+};
+
+
+layout(binding = 0, rgba8) uniform readonly image2D inputImage;
+layout(binding = 1, rgba8) uniform writeonly image2D outputImage;
+
+layout(std140, binding = 1) readonly buffer
+ParticleSSBOIn {
+    Particle particlesIn[ ];
+};
+
+layout(std140, binding = 2) buffer ParticleSSBOOut {
+    Particle particlesOut[ ];
+}
+
+void main() {
+    imageLoad(inputImage, ivec2(gl_GloabalInvocationID.xy)).rgb;
+    imageStore(outputImage, ivec2(gl_GlobalInvocationID.xy), pixel);
+    particlesOut[index].position = particlesIn[index].position + particlesIn[index].velocity.xy * ubo.deltaTime;
+}
