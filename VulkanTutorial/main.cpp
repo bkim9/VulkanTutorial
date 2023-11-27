@@ -42,7 +42,7 @@ const std::vector<const char*> validationLayers = {
 };
 
 const std::vector<const char*> deviceExtensions = {
-    VK_KHR_SWAPCHAIN_EXTENSION_NAME
+    VK_KHR_SWAPCHAIN_EXTENSION_NAME,
 };
 
 #ifdef NDEBUG
@@ -653,8 +653,8 @@ private:
     }
 
     void createGraphicsPipeline() {
-        auto vertShaderCode = readFile("shaders/vert.spv");
-        auto fragShaderCode = readFile("shaders/frag.spv");
+        auto vertShaderCode = readFile("shaders/vert.spv");//readFile("C:/Users/beomsu/source/repos/VulkanTutorial/VulkanTutorial/shaders/vert.spv");
+        auto fragShaderCode = readFile("shaders/frag.spv");//"C:/Users/beomsu/source/repos/VulkanTutorial/VulkanTutorial/shaders/frag.spv");
 
         VkShaderModule vertShaderModule = createShaderModule(vertShaderCode);
         VkShaderModule fragShaderModule = createShaderModule(fragShaderCode);
@@ -1677,6 +1677,8 @@ private:
         vkEnumerateDeviceExtensionProperties(device, nullptr, &extensionCount, availableExtensions.data());
 
         std::set<std::string> requiredExtensions(deviceExtensions.begin(), deviceExtensions.end());
+
+
 
         for (const auto& extension : availableExtensions) {
             requiredExtensions.erase(extension.extensionName);
