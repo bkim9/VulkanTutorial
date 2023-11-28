@@ -164,7 +164,7 @@ public:
     void run() {
         initWindow();
         initVulkan();
-        initImGui();
+        //initImGui();
         mainLoop();
         cleanup();
     }
