@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <UserOutDir>C:\Users\beomsu\source\repos\VulkanTutorial\VulkanTutorial\</UserOutDir>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <Link>
+      <OutputFile>$(UserOutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="UserOutDir">
+      <Value>$(UserOutDir)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

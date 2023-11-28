@@ -59,15 +59,23 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="PropertySheet.props" />
+    <Import Project="PropertySheet1.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="PropertySheet.props" />
+    <Import Project="PropertySheet1.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="PropertySheet.props" />
+    <Import Project="PropertySheet1.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="PropertySheet.props" />
+    <Import Project="PropertySheet1.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -76,7 +84,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\beomsu\Documents\external;%VULKAN_SDK%\Include;C:\Users\beomsu\Documents\glm-master\glm-master\glm;C:\Users\beomsu\Documents\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\beomsu\Documents\GitHub\imgui\backends;C:\Users\beomsu\Documents\GitHub\imgui;C:\Users\beomsu\Documents\external;%VULKAN_SDK%\Include;C:\Users\beomsu\Documents\glm-master\glm-master\glm;C:\Users\beomsu\Documents\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -95,7 +103,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\beomsu\Documents\external;%VULKAN_SDK%\Include;C:\Users\beomsu\Documents\glm-master\glm-master\glm;C:\Users\beomsu\Documents\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\beomsu\Documents\GitHub\imgui\backends;C:\Users\beomsu\Documents\GitHub\imgui;C:\Users\beomsu\Documents\external;%VULKAN_SDK%\Include;C:\Users\beomsu\Documents\glm-master\glm-master\glm;C:\Users\beomsu\Documents\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -114,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\beomsu\Documents\external;%VULKAN_SDK%\Include;C:\Users\beomsu\Documents\glm-master\glm-master\glm;C:\Users\beomsu\Documents\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\beomsu\Documents\GitHub\imgui\backends;C:\Users\beomsu\Documents\GitHub\imgui;C:\Users\beomsu\Documents\external;%VULKAN_SDK%\Include;C:\Users\beomsu\Documents\glm-master\glm-master\glm;C:\Users\beomsu\Documents\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -133,7 +141,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\beomsu\Documents\external;%VULKAN_SDK%\Include;C:\Users\beomsu\Documents\glm-master\glm-master\glm;C:\Users\beomsu\Documents\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\beomsu\Documents\GitHub\imgui\backends;C:\Users\beomsu\Documents\GitHub\imgui;C:\Users\beomsu\Documents\external;%VULKAN_SDK%\Include;C:\Users\beomsu\Documents\glm-master\glm-master\glm;C:\Users\beomsu\Documents\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
