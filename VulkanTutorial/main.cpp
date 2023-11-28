@@ -32,6 +32,25 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_vulkan.h"
 
+const uint32_t MAX_INPUT_ACTIONS = 256;
+typedef struct UISystemInputActions
+{
+    typedef enum UISystemInputAction {
+        UI_ACTION_START_ID_ = MAX_INPUT_ACTIONS - 64,
+
+        UI_ACTION_KEY_TAB,
+        UI_ACTION_KEY_LEFT_ARROW,
+        UI_ACTION_KEY_RIGHT_ARROW,
+        UI_ACTION_KEY_UP_ARROW,
+        UI_ACTION_KEY_DOWN_ARROW,
+        UI_ACTION_KEY_PAGE_UP,
+        UI_ACTION_KEY_PAGE_DOWN,
+
+
+    } UISystemInputAction;
+} UISystemInputActions;
+
+
 const uint32_t WIDTH = 800;
 const uint32_t HEIGHT = 600;
 
@@ -265,6 +284,30 @@ private:
         ImGui::DestroyContext();
     }
 
+    void setDefaultStyle() {
+        ImGuiStyle& style = ImGui::GetStyle();
+        style.WindowRounding = 0.4f;
+        ImVec4* colors = style.Colors;
+        colors[ImGuiCol_Text] = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
+        colors[ImGuiCol_TextDisabled] = ImVec4(.5f, .5f, .5f, 1.0f);
+        colors[ImGuiCol_WindowBg] = ImVec4(.06f, .06f, .06f, 1.0f);
+      
+    }
+
+    void setDefaultIO() {
+        ImGuiIO io = ImGui::GetIO();
+
+        io.ConfigFlags |= ImGuiBackendFlags_RendererHasVtxOffset;
+
+        io.KeyMap[ImGuiKey_Tab]        = UISystemInputActions::UI_ACTION_KEY_TAB;
+        io.KeyMap[ImGuiKey_LeftArrow]  = UISystemInputActions::UI_ACTION_KEY_LEFT_ARROW;
+        io.KeyMap[ImGuiKey_RightArrow] = UISystemInputActions::UI_ACTION_KEY_RIGHT_ARROW;
+        io.KeyMap[ImGuiKey_UpArrow]    = UISystemInputActions::UI_ACTION_KEY_UP_ARROW;
+        io.KeyMap[ImGuiKey_DownArrow]  = UISystemInputActions::UI_ACTION_KEY_DOWN_ARROW;
+        io.KeyMap[ImGuiKey_PageUp]     = UISystemInputActions::UI_ACTION_KEY_PAGE_UP;
+        io.KeyMap[ImGuiKey_PageDown]   = UISystemInputActions::UI_ACTION_KEY_PAGE_DOWN;
+    }
+
     void initImGui() {
         // Setup Dear ImGui context
         IMGUI_CHECKVERSION();
@@ -282,12 +325,8 @@ private:
         //ImGui::StyleColorsLight();
 
         // When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
-        ImGuiStyle& style = ImGui::GetStyle();
-        if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-        {
-            style.WindowRounding = 0.0f;
-            style.Colors[ImGuiCol_WindowBg].w = 1.0f;
-        }
+        setDefaultStyle();
+        setDefaultIO();
     }
 
     void mainLoop() {
