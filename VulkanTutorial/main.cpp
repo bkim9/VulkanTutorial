@@ -28,6 +28,12 @@
 #include <tiny_obj_loader.h>
 #include <unordered_map>
 
+extern "C" {
+    #include "lua.h"
+    #include "lualib.h"
+}
+
+//#include "lua.h"
 
 const uint32_t WIDTH = 800;
 const uint32_t HEIGHT = 600;
@@ -142,6 +148,7 @@ public:
     void run() {
         initWindow();
         initVulkan();
+        initLua();
         mainLoop();
         cleanup();
     }
@@ -211,7 +218,7 @@ private:
     VkImage colorImage;
     VkDeviceMemory colorImageMemory;
     VkImageView colorImageView;
-
+    lua_State* L;
 
 
     void initWindow() {
@@ -255,6 +262,10 @@ private:
         createDescriptorSets();
         createCommandBuffers();
         createSyncObjects();
+    }
+
+    void initLua() {
+        lua_tointeger(L, 0);
     }
 
     void mainLoop() {
@@ -854,19 +865,7 @@ private:
     bool hasStencilComponent(VkFormat format) {
         return format == VK_FORMAT_D32_SFLOAT_S8_UINT || format == VK_FORMAT_D24_UNORM_S8_UINT;
     }
-
-
-
-
-
-
-
     
-
-    
-
-    
-
     void createTextureImage() {
         int texWidth, texHeight, texChannels;
         stbi_uc* pixels = stbi_load(TEXTURE_PATH.c_str(), &texWidth, &texHeight, &texChannels, STBI_rgb_alpha);
