@@ -78,6 +78,9 @@
     <Import Project="PropertySheet1.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(UserOutDir)</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -155,6 +158,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Documents\GitHub\imgui\imgui.cpp" />
+    <ClCompile Include="..\..\..\..\Documents\GitHub\imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\..\..\..\Documents\GitHub\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\..\..\..\Documents\GitHub\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\..\..\..\Documents\GitHub\imgui\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
